@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('send_message', (data) => {
-        console.log(`User Sent Message: ${data.message} to Token: ${data.channelToken}`);
+        // console.log(`User Sent Message: ${data.message} to Token: ${data.channelToken}`);
         socket.to(data.channelToken).emit('receive_message', data);
     });
 
@@ -68,7 +68,11 @@ io.on('connection', (socket) => {
 
     socket.on('switch_camera',(data)=>{
         console.log("SWITCH CAMERA")
-        socket.to(data.channelToken).emit('receive_switch_camera',data)
+        socket.to(data.channelToken).emit('receive_switch_camera',data);
+    })
+
+    socket.on('send_user_details',(data)=>{
+        socket.to(data.channelToken).emit('receive_user_details',data);
     })
 
 
