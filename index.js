@@ -42,6 +42,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('face_verification_failed',(data)=>{
+        console.log("face_verification_failed")
         socket.to(data.channelToken).emit('face_verification',data.status);
     });
 
@@ -66,6 +67,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('switch_camera',(data)=>{
+        console.log("SWITCH CAMERA")
         socket.to(data.channelToken).emit('receive_switch_camera',data.status)
     })
 
