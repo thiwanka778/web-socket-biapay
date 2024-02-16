@@ -38,37 +38,37 @@ io.on('connection', (socket) => {
 
     socket.on('face_verification_success',(data)=>{
         console.log("face_verification_success")
-        socket.to(data.channelToken).emit('face_verification',data.status);
+        socket.to(data.channelToken).emit('face_verification',data);
     });
 
     socket.on('face_verification_failed',(data)=>{
         console.log("face_verification_failed")
-        socket.to(data.channelToken).emit('face_verification',data.status);
+        socket.to(data.channelToken).emit('face_verification',data);
     });
 
     socket.on('capture_selfie_success',(data)=>{
-        socket.to(data.channelToken).emit('capture_selfie',data.status);
+        socket.to(data.channelToken).emit('capture_selfie',data);
     });
 
     socket.on('capture_selfie_failed',(data)=>{
-        socket.to(data.channelToken).emit('capture_selfie',data.status);
+        socket.to(data.channelToken).emit('capture_selfie',data);
     });
 
     socket.on('capture_pictures_of_ID_success',(data)=>{
-        socket.to(data.channelToken).emit('capture_pictures_of_ID',data.status);
+        socket.to(data.channelToken).emit('capture_pictures_of_ID',data);
     });
 
     socket.on('capture_pictures_of_ID_failed',(data)=>{
-        socket.to(data.channelToken).emit('capture_pictures_of_ID',data.status);
+        socket.to(data.channelToken).emit('capture_pictures_of_ID',data);
     });
 
     socket.on('user_enqueue_or_dequeue',(data)=>{
-        socket.to(data.channelToken).emit('receive_user_enqueue_or_dequeue',data.status)
+        socket.to(data.channelToken).emit('receive_user_enqueue_or_dequeue',data)
     })
 
     socket.on('switch_camera',(data)=>{
         console.log("SWITCH CAMERA")
-        socket.to(data.channelToken).emit('receive_switch_camera',data.status)
+        socket.to(data.channelToken).emit('receive_switch_camera',data)
     })
 
 
