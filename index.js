@@ -72,7 +72,7 @@ io.on('connection', (socket) => {
     })
 
     socket.on('send_user_details',(data)=>{
-        console.log("send_user_details")
+        console.log("send_user_details",data)
         socket.to(data.channelToken).emit('receive_user_details',data);
     })
 
