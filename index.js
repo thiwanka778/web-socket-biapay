@@ -63,7 +63,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('user_enqueue_or_dequeue',(data)=>{
-        socket.to(data.channelToken).emit('receive_user_enqueue_or_dequeue',data)
+        socket.emit('receive_user_enqueue_or_dequeue',data)
     })
 
     socket.on('switch_camera',(data)=>{
