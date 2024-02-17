@@ -63,8 +63,11 @@ io.on('connection', (socket) => {
     });
 
     socket.on('user_enqueue_or_dequeue',(data)=>{
-        
         socket.broadcast.emit('receive_user_enqueue_or_dequeue',data);
+    })
+
+    socket.on('test_message',(data)=>{
+        socket.broadcast.emit('receive_test_message',data);
     })
 
     socket.on('switch_camera',(data)=>{
