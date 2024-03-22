@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('face_verification_success',(data)=>{
-        console.log("face_verification_success")
+        console.log("face_verification_success",data)
         socket.to(data.channelToken).emit('face_verification',data);
     });
 
