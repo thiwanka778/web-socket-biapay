@@ -80,6 +80,36 @@ io.on('connection', (socket) => {
         socket.to(data.channelToken).emit('receive_user_details',data);
     })
 
+    //  BROADCAST
+
+    socket.on('broadcast_face_verification_success', (data) => {
+        socket.broadcast.emit('broadcast_face_verification', data);
+    });
+    
+    socket.on('broadcast_face_verification_failed', (data) => {
+        socket.broadcast.emit('broadcast_face_verification', data);
+    });
+    
+    socket.on('broadcast_capture_selfie_success', (data) => {
+        socket.broadcast.emit('broadcast_capture_selfie', data);
+    });
+    
+    socket.on('broadcast_capture_selfie_failed', (data) => {
+        socket.broadcast.emit('broadcast_capture_selfie', data);
+    });
+    
+    socket.on('broadcast_capture_pictures_of_ID_success', (data) => {
+        socket.broadcast.emit('broadcast_capture_pictures_of_ID', data);
+    });
+    
+    socket.on('broadcast_capture_pictures_of_ID_failed', (data) => {
+        socket.broadcast.emit('broadcast_capture_pictures_of_ID', data);
+    });
+
+    socket.on('broadcast_send_user_details',(data)=>{
+        socket.broadcast.emit('broadcast_receive_user_details',data);
+    })
+
 
 
 
